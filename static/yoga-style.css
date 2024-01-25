@@ -1,0 +1,370 @@
+.main {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #BCAAA4;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile {
+  width: 230px;
+  height: 230px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 5px solid #333;
+  display: block;
+  margin: auto;
+  margin-top: 60px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.try-it-out {
+  margin-bottom: 10px; /* Adjust the top margin as needed */
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4CAF50; /* Green background color */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  font-size: 35px;
+  text-align: center;
+  color: #333;
+}
+
+.quote {
+  margin: 20px 0;
+  font-size: 25px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.card {
+  width: 310px;
+  height: 310px;
+  margin: 1em;
+  padding: 0;
+  perspective: 1500px;
+  border: 2px solid #333;
+  /* Add this line to create a border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Add this line for a box shadow */
+  border-radius: 10px;
+
+
+}
+
+.card .front {
+  background-size: 100% 100%;
+  background: rgba(255, 255, 255, 0.0);
+  background-size: cover;
+  background-position: center center;
+}
+
+.card .inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.5em;
+  transform: translateZ(80px) scale(0.94);
+}
+
+.card .more {
+  display: none;
+}
+
+.card .more:checked~.content {
+  transform: rotateY(180deg);
+}
+
+.card .content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.75, 0, 0.85, 1);
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  border-radius: 6px;
+}
+
+.card .inner {
+  height: 100%;
+  display: flex;
+  padding: 1.5em;
+  transform: translateZ(80px) scale(0.94);
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card .front {
+  background-color: #fff;
+  background-size: cover;
+  background-position: center center;
+}
+
+.card .front:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 6px;
+  backface-visibility: hidden;
+}
+
+.card .front h2 {
+  grid-row: 2;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #686868;
+  font-weight: 570;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  font-size: 30px;
+  margin-top: 230px;
+}
+
+.card .back {
+  transform: rotateY(180deg);
+  background-color: #fff;
+  border: 2px solid rgb(240, 240, 240);
+}
+
+.card .back h2 {
+  grid-row: 2;
+  margin-bottom: 0.3em;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #355cc9;
+  font-weight: 450;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.card .back .description {
+  font-size: 1.2em;
+  font-weight: bolder;
+  line-height: 1.4em;
+  color: black;
+  white-space: pre-line;
+  text-align: center;
+  margin-top: -100px;
+  margin-bottom: 20px;
+  /*Adds a 20-pixel margin at the bottom of <p> elements  */
+  /* margin: -30px 0 10px;  */
+  /* margin-bottom: 40px; */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card .back .inner {
+  height: 100%;
+  display: grid;
+  padding: 1.5em;
+  transform: translateZ(80px) scale(0.94);
+  position: relative;
+}
+
+.card .back .inner .button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  /* Add this line */
+
+}
+
+
+
+.card .back .inner .button:hover {
+  background-color: #fff;
+  box-shadow: none;
+  text-shadow: none;
+  color: #355cc9;
+}
+
+.button {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  padding: 0 1.5em;
+  height: 3em;
+  line-height: 2.9em;
+  min-width: 3em;
+  background-color: transparent;
+  border: solid 2px #fff;
+  color: #fff;
+  border-radius: 4px;
+  text-align: center;
+  backface-visibility: hidden;
+  transition: 0.3s ease-in-out;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+#back-button {
+  position: fixed;
+  margin-bottom: 10px;
+  margin-right: 90px;
+  background-color: rgb(29, 112, 112);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.card1 .front {
+  background-image: url('Trikonasana.jpg');
+}
+
+.card2 .front {
+  background-image: url('Naukasana.png');
+}
+
+.card3.front {
+  background-image: url('Bhujangasana.png');
+}
+
+.card5.front {
+  background-image: url('Shavasana.png');
+}
+
+
+.card7.front {
+  background-image: url('Vrikshasana.png');
+}
+
+.card8.front {
+  background-image: url('Sukhasana.png');
+}
+
+.card9.front {
+  background-image: url('Chakrasana.png');
+}
+
+.card4.front {
+  background-image: url('Balasana.png');
+}
+
+
+
+.button.view-details {
+  position: absolute;
+  bottom: -30px;
+  /* Adjust the desired distance from the bottom */
+  left: 50%;
+  /* Center horizontally within the .button-container */
+  transform: translateX(-50%);
+  /* Center horizontally */
+  width: 200px;
+  /* Set the desired width */
+  height: 40px;
+  /* Set the desired height */
+  text-align: center;
+  /* Center text horizontally within the button */
+  line-height: 40px;
+  /* Center text vertically within the button */
+
+  border: 2px solid black;
+  /* Add this line to create a white border */
+  color: black;
+
+
+}
+
+
+.card .more:hover~.content {
+  transform: rotateY(180deg);
+}
+
+.card .back .inner .button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  bottom: -30px;
+}
+
+.card .content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.75, 0, 0.85, 1);
+}
+
+.card .content:hover {
+  transform: rotateY(180deg);
+}
+
+/* .card .back .inner .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    bottom: -30px;
+  } */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* Adjust the alignment as needed */
+  margin: 0 -15px;
+  /* Add negative margin to space out the cards */
+}

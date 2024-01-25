@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pose Detection</title>
+    <style>
+        body {
+            margin: 0; /* Remove default body margin */
+            height: 100vh; /* Set the height of the body to the full viewport height */
+            display: flex;
+            flex-direction: row; /* Set the main axis to be horizontal */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh; /* Set the height of the container to the full viewport height */
+            margin-right: 30px; /* Add margin for spacing between the video and scroll container */
+        }
+
+        img {
+            max-width: 100%; /* Make sure the image doesn't exceed the viewport width */
+            max-height: 100%; /* Make sure the image doesn't exceed the viewport height */
+        }
+
+        div.scroll-container {
+            background-color: #ffffff;
+            overflow-y: auto; /* Enable vertical scrollbar */
+            max-height: 300px; /* Set custom height for the container */
+            width: 200px; /* Set custom width for the container */
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        div.scroll-container img {
+            max-width: 100%; /* Ensure images don't exceed container width */
+            height: auto;
+            margin-bottom: 10px; /* Adjust the margin between images as needed */
+        }
+
+        /* Customize the scrollbar */
+        div.scroll-container::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        div.scroll-container::-webkit-scrollbar-thumb {
+            background-color: #818181; /* Change thumb color */
+            border-radius: 6px; /* Round the corners of the thumb */
+        }
+
+        div.scroll-container::-webkit-scrollbar-track {
+            background-color: #f1f1f1; /* Change track color */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="centered"> <!-- Wrapper div for centering -->
+        <img src="{{ url_for('video_feed1') }}" alt="Pose Detection">
+    </div>
+
+    <div class="scroll-container">
+        <img src="static\img\Warrior II pose.png" alt="T Pose" width="600" height="400">
+        <img src="static\img\Tree pose.png" alt="Warrior II Pose" width="600" height="400">
+        <img src="static\img\T pose.png" alt="Tree Pose" width="600" height="400">
+    </div>
+</body>
+</html>
